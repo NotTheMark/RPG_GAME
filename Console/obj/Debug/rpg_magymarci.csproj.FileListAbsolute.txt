@@ -1,0 +1,14 @@
+C:\Users\User\source\repos\rpg_magymarci\bin\Debug\rpg_magymarci.exe.config
+C:\Users\User\source\repos\rpg_magymarci\bin\Debug\rpg_magymarci.exe
+C:\Users\User\source\repos\rpg_magymarci\bin\Debug\rpg_magymarci.pdb
+C:\Users\User\source\repos\rpg_magymarci\obj\Debug\rpg_magymarci.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\rpg_magymarci\obj\Debug\rpg_magymarci.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\rpg_magymarci\obj\Debug\rpg_magymarci.exe
+C:\Users\User\source\repos\rpg_magymarci\obj\Debug\rpg_magymarci.pdb
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\bin\Debug\rpg_magymarci.exe.config
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\bin\Debug\rpg_magymarci.exe
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\bin\Debug\rpg_magymarci.pdb
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\obj\Debug\rpg_magymarci.csproj.AssemblyReference.cache
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\obj\Debug\rpg_magymarci.csproj.CoreCompileInputs.cache
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\obj\Debug\rpg_magymarci.exe
+C:\Users\nmm\Documents\repos\rpg\rpg_magymarci\obj\Debug\rpg_magymarci.pdb
