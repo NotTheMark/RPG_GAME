@@ -42,5 +42,5 @@ A kalandozás több felszerelést adhat, melyek erősítik a játszott hőst.
 ## Credits
 
 - [@nmmiklos](https://www.github.com/nmmiklos) - Lead Developer
-- [@NotTheMark](https://github.com/NotTheMark) - Creative Design
+- [@NotTheMark](https://github.com/NotTheMark) - Creative Director
 
