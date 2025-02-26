@@ -1,0 +1,6 @@
+Név: csillagharcos
+Szint: 11
+Életerő: 335
+Harci képesség: 195
+Felszerelés: Odin Legendás Kardja
+Xp: 0
