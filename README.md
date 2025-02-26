@@ -1,4 +1,11 @@
 
+# RPG GAME
+
+An RPG Game-like experience made in WPF using c#.
+
+
+
+
 ## Documentation
 
 Console: Interactive! – Navigable with a menu system and numbered options, as well as with the appropriate data (e.g., CharacterName).
@@ -30,4 +37,10 @@ A kalandozás több felszerelést adhat, melyek erősítik a játszott hőst.
 
 
 
+
+
+## Credits
+
+- [@nmmiklos](https://www.github.com/nmmiklos) - Lead Developer
+- [@NotTheMark](https://github.com/NotTheMark) - Creative Design
 
