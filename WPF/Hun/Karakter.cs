@@ -13,8 +13,9 @@ namespace RPGProjekt
         public int HarciKepesseg { get; private set; }
         public string Felszereles { get; private set; }
         public int Xp { get; private set; }
+        public int Penz { get; private set; }
         public bool Halott => EletEro <= 0;
-        public Karakter(string nev, int szint = 1, int eletEro = 100, int harciKepesseg = 10, string felszereles = "Fakard", int xp = 0)
+        public Karakter(string nev, int szint = 1, int eletEro = 100, int harciKepesseg = 10, string felszereles = "Fakard", int xp = 0, int penz = 0)
         {
             KarakterNev = nev;
             Szint = szint;
@@ -22,6 +23,7 @@ namespace RPGProjekt
             HarciKepesseg = harciKepesseg;
             Felszereles = felszereles;
             Xp = xp;
+            Penz = penz;
         }
         public void tapasztalat()
         {
@@ -97,6 +99,50 @@ namespace RPGProjekt
             {
                 Felszereles = "Mágikus Kard";
                 HarciKepesseg += 30;
+            }
+        }
+        public void VaratlanHarc()
+        {
+            Random random_szam = new Random();
+            int esely = random_szam.Next(1, 101); 
+
+            if (HarciKepesseg < 35)
+            {
+                if (esely <= 70) 
+                {
+                    EletEro -= 50;
+                    
+                }
+                else
+                {
+                    EletEro -= 30;
+                    
+                }
+            }
+            else if (HarciKepesseg < 45)
+            {
+                if (esely <= 40) 
+                {
+                    EletEro -= 40;
+                    
+                }
+                else
+                {
+                    EletEro -= 20;
+                    
+                }
+            }
+            else if (HarciKepesseg < 60)
+            {
+                if (esely <= 20)
+                {
+                    EletEro -= 20;
+                    
+                }
+            }
+            else
+            {
+                
             }
         }
         public void Sebzodik(int sebzes)

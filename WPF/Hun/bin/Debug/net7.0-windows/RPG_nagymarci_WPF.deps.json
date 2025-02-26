@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "RPG_nagymarci_WPF/1.0.0": {
+        "runtime": {
+          "RPG_nagymarci_WPF.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RPG_nagymarci_WPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

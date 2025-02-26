@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace RPGProjekt
 {
     public partial class MainWindow : Window
     {
+        private DispatcherTimer frissitoTimer;
         public int kalandok = 0;
         private List<Karakter> hosok = new List<Karakter>();
         public MainWindow()
@@ -15,6 +17,11 @@ namespace RPGProjekt
             InitializeComponent();
             hosok = Karakter.BetoltesFajlbol();
             lstKarakterek.ItemsSource = hosok;
+
+            frissitoTimer = new DispatcherTimer();
+            frissitoTimer.Interval = TimeSpan.FromSeconds(0.5);
+            frissitoTimer.Tick += KarakterInfoFrissit;
+            frissitoTimer.Start();
         }
         private void FrissitLista()
         {
@@ -51,6 +58,7 @@ namespace RPGProjekt
                 MessageBox.Show($"{tamado.KarakterNev} megtámadta {celpont.KarakterNev}-t!\n {celpont.KarakterNev} új életereje: {celpont.EletEro}", "Sikeres Támadás", MessageBoxButton.OK);
                 FrissitLista();
                 EllenorizHalal(celpont);
+                
             }
         }
         private void Gyogyitas(object sender, RoutedEventArgs e)
@@ -78,31 +86,49 @@ namespace RPGProjekt
             if (lstKarakterek.SelectedItem is Karakter karakter)
             {
                 Random szam = new Random();
-                int esely = szam.Next(1, 7);
-                
-                if(esely == 6)
+                int esely = szam.Next(1, 101);
+                kalandok += 1;
+                szintfel.Content = "Szintlépés (" + kalandok + "/5)";
+
+                switch (esely)
                 {
-                    karakter.FelszerelesCsereSiker();
-                    MessageBox.Show($"{karakter.KarakterNev} új felszerelést kapott: {karakter.Felszereles}", "Sikeres Kaland!", MessageBoxButton.OK);
-                    karakter.tapasztalat();
-                    kalandok += 1;
-                    szintfel.Content = "Szintlépés (" + kalandok + "/5)";
+                    case int n when (n <= 35):
+                        int kezd_hp = karakter.EletEro;
+                        karakter.VaratlanHarc();
+                        if (karakter.EletEro == kezd_hp)
+                        {
+                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, de a hatalmas tudásának köszönetően nem sérült meg a harcban", "Váratlan Harc", MessageBoxButton.OK);
+                        }
+                        else if (karakter.EletEro < kezd_hp - 30)
+                        {
+                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Nehezen tudta csak legyőzni és a küzdelem után {karakter.EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
+                        }
+                        else if (karakter.EletEro < kezd_hp - 20)
+                        {
+                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Könnyedén tduta legyőzni és a küzdelem után {karakter.EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
+                        }
+                        EllenorizHalal(karakter);
+                        break;
+                    case int n when (n > 93):
+                        karakter.FelszerelesCsereSiker();
+                        MessageBox.Show($"{karakter.KarakterNev} új felszerelést kapott: {karakter.Felszereles}", "Sikeres Kaland!", MessageBoxButton.OK);
+                        karakter.tapasztalat();
+                        break;
+
+                    default:
+                        MessageBox.Show($"{karakter.KarakterNev} elment kalandozni, de nem talált semmit.", "Sikertelen Kaland!", MessageBoxButton.OK);
+                        karakter.tapasztalat();
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show($"{karakter.KarakterNev} elment kalandozni, de nem talált semmit.","Sikertelen Kaland!", MessageBoxButton.OK);
-                    karakter.tapasztalat();
-                    kalandok += 1;
-                    szintfel.Content = "Szintlépés (" + kalandok + "/5)";
-                }
-                if(kalandok == 5)
+
+                if (kalandok == 5)
                 {
                     szintfel.Content = "Szintlépés (" + kalandok + "/5)";
                     szintfel.IsEnabled = true;
                     kalandok = 0;
                     karakter.tapasztalatReset();
                 }
-                    FrissitLista();
+                FrissitLista();
             }
         }
         private void Mentes(object sender, RoutedEventArgs e)
@@ -114,7 +140,7 @@ namespace RPGProjekt
                 lstKarakterek.ItemsSource = hosok;
             }
             MessageBox.Show("Minden karakter elmentve fájlba!", "Mentés sikeres", MessageBoxButton.OK);
-            
+
         }
         private void Kilepes(object sender, RoutedEventArgs e)
         {
@@ -134,5 +160,29 @@ namespace RPGProjekt
                 FrissitLista();
             }
         }
-    }
+
+        private void KarakterInfoFrissit(object sender, EventArgs e)
+        {
+            if (lstKarakterek.SelectedItem is Karakter karakter)
+            {
+            lblSzint.Content = "Szint: " + karakter.Szint;
+            lblElet.Content = "Élet: " + karakter.EletEro;
+            lblTapasztalat.Content = "Tapasztalat: " + karakter.Xp;
+            lblFelszereles.Content = "Felszerelés: " + karakter.Felszereles;
+            lblPenz.Content = "Pénz: " + karakter.Penz;
+            }
+            lstKarakterek.Items.Refresh();
+            
+        }
+
+        private void Fejvadaszat(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PiacMegnyit(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }     
 }
