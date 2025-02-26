@@ -1,7 +1,7 @@
 
 # RPG GAME
 
-An RPG Game-like experience made in WPF using c#.
+An RPG Game-like experience made in WPF and Console using c#.
 
 
 
