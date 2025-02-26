@@ -1,0 +1,14 @@
+﻿<Window x:Class="RPG_nagymarci_WPF_eng.AttackWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Attack" Height="250" Width="400">
+    <Grid>
+        <TextBlock Text="Select the attacker:" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbAttacker" Margin="10,30,10,0" VerticalAlignment="Top"/>
+
+        <TextBlock Text="Select the target:" Margin="10,70,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbTarget" Margin="10,90,10,0" VerticalAlignment="Top"/>
+
+        <Button Content="Attack" x:Name="AttackButton" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="AttackButton_Click"/>
+    </Grid>
+</Window>
