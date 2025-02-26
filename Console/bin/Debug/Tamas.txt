@@ -1,5 +1,0 @@
-Név:Tamas
-Szint: 1
-Életerő: 85
-Harci képesség: 10
-Felszerelés: Alap kard

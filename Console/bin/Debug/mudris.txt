@@ -1,5 +1,0 @@
-Név:mudris
-Szint: 2
-Életerő: 135
-Harci képesség: 15
-Felszerelés: Mágikus Kard
