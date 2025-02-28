@@ -1,0 +1,6 @@
+Név: dd
+Szint: 1
+Életerő: -20
+Harci képesség: 40
+Felszerelés: Mágikus Kard
+Xp: 1

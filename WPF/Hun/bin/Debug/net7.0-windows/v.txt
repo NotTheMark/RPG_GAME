@@ -1,0 +1,8 @@
+Név: v
+Szint: 1
+Életerő: 50
+Harci képesség: 10
+Felszerelés: Fakard
+Xp: 0
+Pénz: 10
+Energia: 70

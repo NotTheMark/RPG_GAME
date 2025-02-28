@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_nagymarci_WPF;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -10,6 +11,7 @@ namespace RPGProjekt
     public partial class MainWindow : Window
     {
         private DispatcherTimer frissitoTimer;
+        private DispatcherTimer energiaTimer;
         public int kalandok = 0;
         private List<Karakter> hosok = new List<Karakter>();
         public MainWindow()
@@ -22,6 +24,12 @@ namespace RPGProjekt
             frissitoTimer.Interval = TimeSpan.FromSeconds(0.5);
             frissitoTimer.Tick += KarakterInfoFrissit;
             frissitoTimer.Start();
+
+
+            energiaTimer = new DispatcherTimer();
+            energiaTimer.Interval = TimeSpan.FromSeconds(30);
+            energiaTimer.Tick += EnergiaFrissit;
+            energiaTimer.Start();
         }
         private void FrissitLista()
         {
@@ -87,6 +95,13 @@ namespace RPGProjekt
             {
                 Random szam = new Random();
                 int esely = szam.Next(1, 101);
+
+                if (!karakter.EnergiaVesztes(20))
+                {
+                    MessageBox.Show("Nincs elég energiád a kalandozáshoz!", "Energiahiány", MessageBoxButton.OK);
+                    return;
+                }
+
                 kalandok += 1;
                 szintfel.Content = "Szintlépés (" + kalandok + "/5)";
 
@@ -151,14 +166,25 @@ namespace RPGProjekt
             if (celpont.EletEro <= 0)
             {
                 MessageBox.Show($"{celpont.KarakterNev} elesett a harcban!", "Halál", MessageBoxButton.OK);
-                foreach (var karakter in hosok)
+                hosok.Remove(celpont);
+
+                string fajlNev = $"{celpont.KarakterNev}.txt";
+                if (File.Exists(fajlNev))
                 {
-                    karakter.MentesFajlba();
-                    hosok = Karakter.BetoltesFajlbol();
-                    lstKarakterek.ItemsSource = hosok;
+                    File.Delete(fajlNev);
                 }
+                
                 FrissitLista();
             }
+    
+        }
+        private void EnergiaFrissit(object sender, EventArgs e)
+        {
+            foreach (var karakter in hosok)
+            {
+                karakter.EnergiaUjra();
+            }
+            FrissitLista();
         }
 
         private void KarakterInfoFrissit(object sender, EventArgs e)
@@ -170,19 +196,60 @@ namespace RPGProjekt
             lblTapasztalat.Content = "Tapasztalat: " + karakter.Xp;
             lblFelszereles.Content = "Felszerelés: " + karakter.Felszereles;
             lblPenz.Content = "Pénz: " + karakter.Penz;
+            lblEnergia.Content = "Energia: " + karakter.Energia;
             }
             lstKarakterek.Items.Refresh();
-            
+
         }
 
         private void Fejvadaszat(object sender, RoutedEventArgs e)
         {
+            if (lstKarakterek.SelectedItem is Karakter karakter)
+            {
+               
 
+                Random randszam = new Random();
+
+                if (!karakter.EnergiaVesztes(30))
+                {
+                    MessageBox.Show("Nincs elég energiád a fejvadászatra!", "Energiahiány", MessageBoxButton.OK);
+                    return;
+                }
+
+                int esely = randszam.Next(1, 101);
+                esely += (int)(Math.Log(karakter.Szint + 1) * 10);
+                esely += karakter.Szerencse;
+
+                int randomErtek = randszam.Next(1, 101); // --- kontrolnak van itte 
+                bool siker = esely >= randomErtek;
+
+                if (karakter.Fejvadaszatra_indul(siker))
+                {
+                    MessageBox.Show("A külkdetés sikeresn teljesítve -- + 10 G");
+                }
+                else
+                {
+                    MessageBox.Show("Baj lett, nem sikerült a megadott célponot eltalálni, -13 G");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nincs karakter kivalsztva");
+            }
+            
         }
 
         private void PiacMegnyit(object sender, RoutedEventArgs e)
         {
-
+            if (lstKarakterek.SelectedItem is Karakter karakter)
+            {
+               Piac Piacablaak = new Piac(karakter);
+               Piacablaak.Show();
+            }
+            else
+            {
+                MessageBox.Show("Válasz ki kérlek egy karakterk aki elmegy a piacra.");
+            }
         }
     }     
 }
