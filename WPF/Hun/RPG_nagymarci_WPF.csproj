@@ -10,6 +10,29 @@
 
   <ItemGroup>
     <None Remove="karakterkep.png" />
+    <None Remove="Resources\erdo.png" />
+    <None Remove="Resources\fu.png" />
+    <None Remove="Resources\hegyek.png" />
+    <None Remove="Resources\varos.png" />
+    <None Remove="Resources\viz.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\erdo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\fu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\hegyek.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\varos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\viz.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

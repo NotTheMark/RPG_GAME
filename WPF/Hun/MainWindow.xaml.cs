@@ -119,6 +119,8 @@ namespace RPGProjekt
                     MessageBox.Show("Nincs elég energiád a kalandozáshoz!", "Energiahiány", MessageBoxButton.OK);
                     return;
                 }
+                Terkep Terkepablak = new Terkep();
+                Terkepablak.Show();
 
                 kalandok += 1;
                 szintfel.Content = "Szintlépés (" + kalandok + "/5)";

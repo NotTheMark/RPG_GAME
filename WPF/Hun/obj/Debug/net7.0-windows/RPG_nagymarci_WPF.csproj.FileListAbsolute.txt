@@ -1,3 +1,8 @@
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\Resources\erdo.png
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\Resources\fu.png
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\Resources\hegyek.png
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\Resources\varos.png
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\Resources\viz.png
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\RPG_nagymarci_WPF.exe
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\RPG_nagymarci_WPF.deps.json
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\bin\Debug\net7.0-windows\RPG_nagymarci_WPF.runtimeconfig.json
@@ -6,9 +11,15 @@ C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\b
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\TamadasAblak.baml
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Piac.g.cs
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\TamadasAblak.g.cs
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Terkep.g.cs
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF_Content.g.cs
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF_MarkupCompile.cache
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF_MarkupCompile.lref
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Piac.baml
+C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Terkep.baml
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF.g.resources
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF.AssemblyInfoInputs.cache
@@ -19,6 +30,3 @@ C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\o
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF.pdb
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF.genruntimeconfig.cache
 C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\ref\RPG_nagymarci_WPF.dll
-C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\RPG_nagymarci_WPF_MarkupCompile.lref
-C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Piac.g.cs
-C:\Users\Felhasznalo\Documents\Suli\programozas\git\MARCI RPG\RPG_GAME\WPF\Hun\obj\Debug\net7.0-windows\Piac.baml
