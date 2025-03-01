@@ -77,5 +77,11 @@
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="0.4"/>
             </Button.Background>
         </Button>
+        <Rectangle x:Name="CharacterSprite" Width="100" Height="100" Margin="233,204,0,0"
+           HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <ImageBrush x:Name="SpriteBrush" ImageSource="/karakterkep.png" Stretch="UniformToFill"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>

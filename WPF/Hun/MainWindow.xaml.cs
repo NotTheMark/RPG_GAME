@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace RPGProjekt
@@ -19,6 +20,7 @@ namespace RPGProjekt
             InitializeComponent();
             hosok = Karakter.BetoltesFajlbol();
             lstKarakterek.ItemsSource = hosok;
+            
 
             frissitoTimer = new DispatcherTimer();
             frissitoTimer.Interval = TimeSpan.FromSeconds(0.5);
@@ -46,6 +48,22 @@ namespace RPGProjekt
                 FrissitLista();
                 MessageBox.Show($"{nev} hozzáadva a karakterekhez!", "Siker");
             }
+        }
+        void FrissitKep(int hp)
+        {
+            int spriteIndex = 0;
+
+            if (hp > 75) spriteIndex = 0;      
+            else if (hp > 50) spriteIndex = 1; 
+            else if (hp > 25) spriteIndex = 2; 
+            else spriteIndex = 3;              
+
+            double spriteWidth = 1.0 / 4;
+            double xOffset = spriteIndex * spriteWidth; 
+
+
+            SpriteBrush.Viewbox = new Rect(xOffset, 0, spriteWidth, 1);
+            SpriteBrush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
         }
         private void Tamadas(object sender, RoutedEventArgs e)
         {
@@ -197,8 +215,12 @@ namespace RPGProjekt
             lblFelszereles.Content = "Felszerelés: " + karakter.Felszereles;
             lblPenz.Content = "Pénz: " + karakter.Penz;
             lblEnergia.Content = "Energia: " + karakter.Energia;
+
+            FrissitKep(karakter.EletEro);
+            CharacterSprite.Visibility = Visibility.Visible;
             }
             lstKarakterek.Items.Refresh();
+
 
         }
 
