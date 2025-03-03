@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\nmm\Documents\GitHub\RPG_GAME\WPF\obj\Debug\net8.0-windows\
+C:\Users\User\Documents\GitHub\RPG_GAME\WPF\Hun\obj\Debug\net8.0-windows\
 RPG_nagymarci_WPF
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\nmm\Documents\GitHub\RPG_GAME\WPF\App.xaml
-2-80549156
-
-8-1042334332
-1981839832580
-MainWindow.xaml;TamadasAblak.xaml;
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+C:\Users\User\Documents\GitHub\RPG_GAME\WPF\Hun\App.xaml
+42038310699
+5-1789962213
+10-794329764
+198-556154604
+MainWindow.xaml;Piac.xaml;TamadasAblak.xaml;Terkep.xaml;
 
 False
 

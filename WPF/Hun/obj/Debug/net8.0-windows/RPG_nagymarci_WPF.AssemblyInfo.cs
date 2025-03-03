@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RPG_nagymarci_WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86ddc2bcf4959317758809071801d5792612ff8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("RPG_nagymarci_WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RPG_nagymarci_WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
