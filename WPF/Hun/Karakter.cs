@@ -8,20 +8,20 @@ namespace RPGProjekt
 {
     public class Karakter
     {
-        public string KarakterNev { get; private set; }
-        public int Szint { get; private set; }
-        public int EletEro { get; private set; }
-        public int HarciKepesseg { get; private set; }
-        public string Felszereles { get; private set; }
-        public int Xp { get; private set; }
-        public int Penz { get; private set; }
-        public int Energia { get; private set; }
+        public string KarakterNev { get; set; }
+        public int Szint { get; set; }
+        public int EletEro { get; set; }
+        public int HarciKepesseg { get; set; }
+        public string Felszereles { get; set; }
+        public int Xp { get; set; }
+        public int Penz { get; set; }
+        public int Energia { get; set; }
         public bool KatakombaKulcs { get; set; }
         public bool KatakombaTerkepp { get; set; }
         public int Szerencse { get; set; }
         public bool Halott => EletEro <= 0;
         private const int MaxEnergia = 100;
-        public Karakter(string nev, int szint = 1, int eletEro = 100, int harciKepesseg = 10, string felszereles = "Fakard", int xp = 0, int penz = 0, int energia = 100)
+        public Karakter(string nev, int szint = 1, int eletEro = 100, int harciKepesseg = 10, string felszereles = "Fakard", int xp = 0, int penz = 25, int energia = 100)
         {
             KarakterNev = nev;
             Szint = szint;
@@ -119,7 +119,7 @@ namespace RPGProjekt
                 switch (id)
                 {
                     case "kave":
-                        Energia += 5;
+                        Energia += 15;
                         Penz -= ar;
                         break;
 
@@ -159,34 +159,13 @@ namespace RPGProjekt
         {
             Random szam = new Random();
             int esely =szam.Next(1, 7);
-            if(EletEro > 300)
-            {
-                EletEro = 300;
-            }
-            if(esely == 1)
-            {
-                EletEro += 10;
-            }
-            else if(esely == 2)
-            {
-                EletEro += 15;
-            }
-            else if (esely == 3)
-            {
-                EletEro += 20;
-            }
-            else if (esely == 4)
-            {
-                EletEro += 30;
-            }
-            else if (esely == 5)
-            {
-                EletEro += 40;
-            }
-            else
-            {
-                EletEro += 50;
-            }
+            if(EletEro > 300){EletEro = 300;}
+            if(esely == 1){EletEro += 10;}
+            else if(esely == 2){EletEro += 15;}
+            else if (esely == 3){EletEro += 20;}
+            else if (esely == 4){EletEro += 30;}
+            else if (esely == 5){EletEro += 40;}
+            else{EletEro += 50;}
         }
         public void FelszerelesCsereSiker()
         {

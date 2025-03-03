@@ -41,7 +41,7 @@ namespace RPG_nagymarci_WPF
 
             if (aktualisKarakter.Vasarlas("kave", 5))
             {
-                MessageBox.Show("Sikeres vásárlás +5 energia");
+                MessageBox.Show("Sikeres vásárlás +15 energia");
                 FrissitPenz();
             }
             else
