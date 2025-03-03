@@ -111,54 +111,20 @@ namespace RPGProjekt
         {
             if (lstKarakterek.SelectedItem is Karakter karakter)
             {
-                Random szam = new Random();
-                int esely = szam.Next(1, 101);
-
                 if (!karakter.EnergiaVesztes(20))
                 {
                     MessageBox.Show("Nincs elég energiád a kalandozáshoz!", "Energiahiány", MessageBoxButton.OK);
                     return;
                 }
-                Terkep Terkepablak = new Terkep();
-                Terkepablak.Show();
+
+                Terkep terkepAblak = new Terkep(this,karakter); 
+                terkepAblak.Show();
 
                 kalandok += 1;
                 szintfel.Content = "Szintlépés (" + kalandok + "/5)";
 
-                switch (esely)
-                {
-                    case int n when (n <= 35):
-                        int kezd_hp = karakter.EletEro;
-                        karakter.VaratlanHarc();
-                        if (karakter.EletEro == kezd_hp)
-                        {
-                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, de a hatalmas tudásának köszönetően nem sérült meg a harcban", "Váratlan Harc", MessageBoxButton.OK);
-                        }
-                        else if (karakter.EletEro < kezd_hp - 30)
-                        {
-                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Nehezen tudta csak legyőzni és a küzdelem után {karakter.EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
-                        }
-                        else if (karakter.EletEro < kezd_hp - 20)
-                        {
-                            MessageBox.Show($"{karakter.KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Könnyedén tduta legyőzni és a küzdelem után {karakter.EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
-                        }
-                        EllenorizHalal(karakter);
-                        break;
-                    case int n when (n > 93):
-                        karakter.FelszerelesCsereSiker();
-                        MessageBox.Show($"{karakter.KarakterNev} új felszerelést kapott: {karakter.Felszereles}", "Sikeres Kaland!", MessageBoxButton.OK);
-                        karakter.tapasztalat();
-                        break;
-
-                    default:
-                        MessageBox.Show($"{karakter.KarakterNev} elment kalandozni, de nem talált semmit.", "Sikertelen Kaland!", MessageBoxButton.OK);
-                        karakter.tapasztalat();
-                        break;
-                }
-
                 if (kalandok == 5)
                 {
-                    szintfel.Content = "Szintlépés (" + kalandok + "/5)";
                     szintfel.IsEnabled = true;
                     kalandok = 0;
                     karakter.tapasztalatReset();
@@ -166,6 +132,7 @@ namespace RPGProjekt
                 FrissitLista();
             }
         }
+
         private void Mentes(object sender, RoutedEventArgs e)
         {
             foreach (var karakter in hosok)
@@ -181,7 +148,7 @@ namespace RPGProjekt
         {
             Application.Current.Shutdown();
         }
-        private void EllenorizHalal(Karakter celpont)
+        public void EllenorizHalal(Karakter celpont)
         {
             if (celpont.EletEro <= 0)
             {

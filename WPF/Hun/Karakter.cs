@@ -80,7 +80,37 @@ namespace RPGProjekt
             Console.WriteLine($"{KarakterNev} védekezik, csökkentett sebzést kap a következő támadásból.");
             EletEro += 10;
         }
+        public void ValamiVan()
+        {
+            Random szam = new Random();
+            int esely = szam.Next(1, 101);
 
+            if(esely <= 35)
+            {
+                int kezd_hp = EletEro;
+                VaratlanHarc();
+                if (EletEro == kezd_hp)
+                {
+                    MessageBox.Show($"{KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, de a hatalmas tudásának köszönetően nem sérült meg a harcban", "Váratlan Harc", MessageBoxButton.OK);
+                }
+                else if (EletEro < kezd_hp - 30)
+                {
+                    MessageBox.Show($"{KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Nehezen tudta csak legyőzni és a küzdelem után {EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
+                    MessageBox.Show($"{KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Nehezen tudta csak legyőzni és a küzdelem után {EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
+                }
+                else if (EletEro < kezd_hp - 20)
+                {
+                   MessageBox.Show($"{KarakterNev} elindult és kalandozás közben egy vad cica megtámadta, Könnyedén tduta legyőzni és a küzdelem után {EletEro} HP-ja maradt", "Váratlan Harc", MessageBoxButton.OK);
+                }
+                    
+            };
+            if (esely > 93)
+            {
+                FelszerelesCsereSiker();
+                MessageBox.Show($"{KarakterNev} új felszerelést kapott: {Felszereles}", "Sikeres Kaland!", MessageBoxButton.OK);
+                tapasztalat();
+            }     
+        }
         public bool Vasarlas(string id,int ar)
         {
             MessageBox.Show(Convert.ToString(Penz));

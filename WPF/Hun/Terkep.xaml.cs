@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using RPGProjekt;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -9,6 +10,9 @@ namespace RPG_nagymarci_WPF
 {
     public partial class Terkep : Window
     {
+        private MainWindow mainWindow;
+        private Karakter Karakter;
+
         int[,] terkep = {
         { 1, 1, 1, 1, 4, 4, 4, 3, 1, 1, 1, 1, 0, 0 },
         { 1, 1, 1, 4, 4, 4, 3, 3, 1, 1, 3, 1, 1, 0 },
@@ -36,32 +40,56 @@ namespace RPG_nagymarci_WPF
 
         Rectangle karakter;
 
-        public Terkep()
+        public Terkep(MainWindow mainWindow, Karakter karakter)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow; 
+            this.Karakter = karakter;  
             RajzolTerkep();
             this.KeyDown += KeyDownHandler;
         }
+
+
         private bool LehetMozogni(int x, int y)
         {
-            if (x < 0 || x >= terkep.GetLength(0) || y < 0 || y >= terkep.GetLength(1))
+            if (x < 0 || x >= terkep.GetLength(0) || y < 0 || y >= terkep.GetLength(1)-1)
             {
                 return false; 
             }
 
+            Random szam = new Random();
+            int esely = szam.Next(1, 101);
 
             int tile = terkep[y, x];
             if (tile == 2 || tile == 3 || tile == 1)
             {
+
+                if (tile == 1 &&esely <= 15)
+                {
+                    Karakter.ValamiVan();
+                    mainWindow.EllenorizHalal(Karakter);
+                    if (Karakter.EletEro <= 0) this.Close();
+                }
+                if (tile == 3 && esely <= 35)
+                {
+                    Karakter.ValamiVan();
+                    mainWindow.EllenorizHalal(Karakter);
+                    if (Karakter.EletEro <= 0) this.Close();
+                }
+
                 return true;
+              
             }
+            
+            
             else
             {
                 return false;
             }
+
         }
 
-
+        
 
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
