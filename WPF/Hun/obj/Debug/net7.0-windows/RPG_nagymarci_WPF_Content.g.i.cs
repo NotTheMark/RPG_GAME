@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/erdo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/fu.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/hegyek.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/karakterkep.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/varos.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/viz.png")]
 

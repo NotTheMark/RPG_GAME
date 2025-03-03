@@ -171,16 +171,39 @@ namespace RPG_nagymarci_WPF
                 }
             }
 
-
-            karakter = new Rectangle
+            Image karakterImage = new Image
             {
                 Width = cellaMeret,
                 Height = cellaMeret,
-                Fill = Brushes.Red
+                Source = GetKarakterSprite()
             };
-            Canvas.SetLeft(karakter, karakterX * cellaMeret);
-            Canvas.SetTop(karakter, karakterY * cellaMeret);
-            TerkepCanvas.Children.Add(karakter);
+
+            Canvas.SetLeft(karakterImage, karakterX * cellaMeret);
+            Canvas.SetTop(karakterImage, karakterY * cellaMeret);
+            TerkepCanvas.Children.Add(karakterImage);
+        }
+
+        private ImageSource GetKarakterSprite()
+        {
+            BitmapImage spriteSheet = new BitmapImage(new Uri("Resources/karakterkep.png", UriKind.Relative));
+
+            int spriteSzam = 4;
+            double spriteWidth = spriteSheet.PixelWidth / spriteSzam;
+            double spriteHeight = spriteSheet.PixelHeight;
+
+            int spriteIndex = 0;
+
+            if (Karakter.EletEro > 75) spriteIndex = 0;
+            else if (Karakter.EletEro > 50) spriteIndex = 1; 
+            else if (Karakter.EletEro > 25) spriteIndex = 2;  
+            else spriteIndex = 3;
+
+            CroppedBitmap croppedBitmap = new CroppedBitmap(
+                spriteSheet,
+                new Int32Rect((int)(spriteIndex * spriteWidth), 0, (int)spriteWidth, (int)spriteHeight)
+            );
+
+            return croppedBitmap;
         }
 
 

@@ -62,6 +62,7 @@ namespace RPGProjekt
             double xOffset = spriteIndex * spriteWidth; 
 
 
+
             SpriteBrush.Viewbox = new Rect(xOffset, 0, spriteWidth, 1);
             SpriteBrush.ViewboxUnits = BrushMappingMode.RelativeToBoundingBox;
         }
